@@ -14,7 +14,9 @@ struct ContentView: View {
     @State private var selectedFolderPath: String = ""
     @State private var repositories: [Repository] = []
 
+    // MARK: - Dependencies
     private let repoScanner = RepositoryScanner()
+    private let vscodeLauncher = VSCodeLauncher()
     
     // MARK: - View
     var body: some View {
@@ -54,13 +56,22 @@ struct ContentView: View {
                 Divider()
 
                 List(repositories) { repo in
-                    VStack(alignment: .leading) {
-                        Text(repo.name)
-                            .font(.headline)
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(repo.name)
+                                .font(.headline)
 
-                        Text(repo.path)
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
+                            Text(repo.path)
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+
+                        Spacer()
+
+                        Button("Open in VS Code") {
+                            vscodeLauncher.openRepository(at: repo.path)
+                        }
+                        .buttonStyle(.bordered)
                     }
                 }
             }
