@@ -20,8 +20,18 @@ struct ContentView: View {
     
     // MARK: - View
     var body: some View {
+        content
+            .toolbar(removing: .title)
+            .toolbar() {
+                RepoDockToolbar()
+            }
+            .toolbarBackground(.secondaryBg)
+    }
+    
+    
+    // MARK: - Content
+    var content: some View {
         VStack(alignment: .leading, spacing: 16) {
-
             // Title
             VStack(alignment: .leading, spacing: 4) {
                 Text("RepoDock")
@@ -78,6 +88,7 @@ struct ContentView: View {
         }
         .padding(20)
         .frame(minWidth: 800, minHeight: 500)
+        .background(.bg)
     }
     
     // MARK: - Button action
