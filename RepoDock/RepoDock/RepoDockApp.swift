@@ -13,5 +13,9 @@ struct RepoDockApp: App {
         WindowGroup {
             ContentView()
         }
+        
+        Settings {
+            SettingsView()
+        }
     }
 }

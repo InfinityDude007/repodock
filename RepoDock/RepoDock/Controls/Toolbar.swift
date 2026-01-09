@@ -27,7 +27,7 @@ struct RepoDockToolbar: ToolbarContent {
         
         ToolbarSpacer(.flexible)
         
-        // MARK: - Toolbar button UI
+        // MARK: - Toolbar button
         ToolbarItemGroup {
             
             /// Search repositories
@@ -67,16 +67,14 @@ struct RepoDockToolbar: ToolbarContent {
                 systemImage: "house",
                 help: "Back to Dashboard"
             ) {
-                // preferences popup logic
+                // back to dashboard logic
             }
             
-            /// Open preferences
-            ToolbarIconButton(
+            /// Open Settings
+            ToolbarSettingsButton(
                 systemImage: "gearshape",
-                help: "Open Preferences"
-            ) {
-                // preferences popup logic
-            }
+                help: "Open Settings"
+            )
         }
     }
 }
