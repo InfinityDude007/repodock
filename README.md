@@ -10,16 +10,20 @@ The goal is to provide a fast, native alternative to manually hunting for reposi
 - Open repositories in VS Code
 - Provide a clean, developer-first UI
 
+## Features
+- Folder scanning
+- Repo detection
+- VS Code integration
+
 ## Status
-Early development (v0.0.1)
+Early development (v0.0.2)
 
 ## Tech Stack
 - Swift
 - SwiftUI
-- AppKit (where needed)
+- AppKit
 
 ## Roadmap
-- Folder scanning
-- Repo detection
-- VS Code integration
 - Git metadata
+- Accent Customisation
+- Memory for accents and repos
